@@ -1,6 +1,12 @@
 # https://github.com/veracrypt/VeraCrypt
 ---
 
+- dynamic_defaults:
+    hostvars: '{{ hostvars[inventory_hostname] }}'
+    defaults: '{{ veracrypt_dynamic_defaults }}'
+    must_match: yes
+  tags: [veracrypt, always]
+
 - block:
     - name: Install VeraCrypt build packages
       package:
