@@ -12,6 +12,18 @@ veracrypt_dynamic_defaults:
       - libwxgtk3.0-gtk3-0v5
       - libwxgtk3.0-gtk3-dev
 
+  ubuntu-22.*:
+    veracrypt_build_packages:
+      - makeself
+      - nasm
+      - yasm
+      - libfuse3-3
+      - libfuse-dev
+      - libwxbase3.0-0v5
+      - libwxbase3.0-dev
+      - libwxgtk3.0-gtk3-0v5
+      - libwxgtk3.0-gtk3-dev
+
   linux:
     veracrypt_build_packages:
       - makeself
