@@ -7,6 +7,8 @@ veracrypt_dynamic_defaults:
       - yasm
       - libfuse2
       - libfuse-dev
+      - libpcsclite1
+      - libpcsclite-dev
       - libwxbase3.0-0v5
       - libwxbase3.0-dev
       - libwxgtk3.0-gtk3-0v5
@@ -19,6 +21,8 @@ veracrypt_dynamic_defaults:
       - yasm
       - libfuse3-3
       - libfuse-dev
+      - libpcsclite1
+      - libpcsclite-dev
       - libwxbase3.0-0v5
       - libwxbase3.0-dev
       - libwxgtk3.0-gtk3-0v5
@@ -30,10 +34,14 @@ veracrypt_dynamic_defaults:
       - nasm
       - libfuse2
       - libfuse-dev
+      - libpcsclite1
+      - libpcsclite-dev
       - libwxbase3.0-0v5
       - libwxbase3.0-dev
       - libwxgtk3.0-0v5
       - libwxgtk3.0-dev
 
 veracrypt_repository_url: https://github.com/veracrypt/VeraCrypt.git
-# veracrypt_version: VeraCrypt_1.17  # 05/04/2017
+
+# https://github.com/veracrypt/VeraCrypt/tags
+# veracrypt_version: VeraCrypt_1.26.7
