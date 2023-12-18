@@ -4,32 +4,34 @@
 - dynamic_defaults:
     hostvars: '{{ hostvars[inventory_hostname] }}'
     defaults: '{{ veracrypt_dynamic_defaults }}'
-    must_match: yes
+    must_match: true
   tags: [veracrypt, always]
 
 - block:
     - name: Install VeraCrypt build packages
-      package:
+      ansible.builtin.package:
         name: '{{ veracrypt_build_packages }}'
         state: present
 
     - name: Clone VeraCrypt source code
-      git:
+      ansible.builtin.git:
         repo: '{{ veracrypt_repository_url }}'
         dest: '{{ local_source_directory }}/veracrypt'
-        force: yes
+        force: true
         version: '{{ veracrypt_version }}'
 
     - name: Build VeraCrypt from source
-      make:
+      ansible.builtin.make:
         chdir: '{{ local_source_directory }}/veracrypt/src'
         params:
           '--jobs': '{{ ansible_processor_cores }}'
 
     - name: Create VeraCrypt symlink
-      file:
+      ansible.builtin.file:
         src: '{{ local_source_directory }}/veracrypt/src/Main/veracrypt'
         dest: /usr/local/bin/veracrypt
         state: link
-  become: yes
+  become: true
   tags: [veracrypt, packages]
+
+...
