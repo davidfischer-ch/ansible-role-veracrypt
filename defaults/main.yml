@@ -30,22 +30,22 @@ veracrypt_dynamic_defaults:
       - libwxgtk3.0-gtk3-0v5
       - libwxgtk3.0-gtk3-dev
 
-  linux:
+  ubuntu-24.*:
     veracrypt_build_packages:
       - makeself
       - nasm
-      - libfuse2
+      - yasm
+      - libfuse3-3
       - libfuse-dev
       - libpcsclite1
       - libpcsclite-dev
-      - libwxbase3.0-0v5
-      - libwxbase3.0-dev
-      - libwxgtk3.0-0v5
-      - libwxgtk3.0-dev
+      - libwxbase3.2-1t64
+      - libwxgtk3.2-1t64
+      - libwxgtk3.2-dev
 
 veracrypt_repository_url: https://github.com/veracrypt/VeraCrypt.git
 
 # https://github.com/veracrypt/VeraCrypt/tags
-# veracrypt_version: VeraCrypt_1.26.7
+# veracrypt_version: VeraCrypt_1.26.15
 
 ...
